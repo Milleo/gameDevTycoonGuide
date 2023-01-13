@@ -2,21 +2,18 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
 import Select from 'react-select';
 import topicsData from "../data/topics.json";
-import platformsData from "../data/platforms.json";
 
 const FilterFormTopics = (props) => {
     const { onChange } = props;
     const [ topics, setTopics ] = useState([]);
     const [ genres, setGenres ] = useState([]);
     const [ audiences, setAudiences ] = useState([]);
-    const [ platforms, setPlatforms ] = useState([]);
 
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
     const genresOptions = Object.keys(topicsData[0].genres).map((genre) => { return { value: genre, label: genre } });
     const audiencesOptions = Object.keys(topicsData[0].audience).map((aud) => { return { value: aud, label: aud } });
-    const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
-    useEffect(() => onChange(topics, genres, audiences, platforms), [topics, genres, audiences, platforms])
+    useEffect(() => onChange(topics, genres, audiences), [topics, genres, audiences])
     
     return <Container>
         <Card className="my-3">
