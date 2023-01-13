@@ -1,7 +1,7 @@
 import { Table } from "react-bootstrap";
 import { convertNumberToSymbols } from "../utils";
 
-const GenresTable = (props) => {
+const TopicsTable = (props) => {
     const { data, filteredGenres, filteredAudiences } = props;
     const genreColumns = [
         { value: "action", label: "Action" },
@@ -69,4 +69,4 @@ const GenresTable = (props) => {
     </Table>
 }
 
-export default GenresTable;
+export default TopicsTable;

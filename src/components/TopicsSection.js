@@ -1,4 +1,4 @@
-import GenresTable from './GenresTable';
+import TopicsTable from './TopicsTable';
 import FilterFormTopics from './FilterFormTopics';
 import topicsData from "../data/topics.json";
 import { Fragment, useState } from 'react';
@@ -47,7 +47,7 @@ const TopicsSection = () => {
     
     return <Fragment>
         <FilterFormTopics onChange={ handleChangeTopics }  />
-        <GenresTable data={filteredData} filteredGenres={ filteredGenres } filteredAudiences={ filteredAudiences } />
+        <TopicsTable data={filteredData} filteredGenres={ filteredGenres } filteredAudiences={ filteredAudiences } />
     </Fragment>
 }
 
