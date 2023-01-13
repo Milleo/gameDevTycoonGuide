@@ -1,0 +1,450 @@
+[
+    {
+        "name": "PC",
+        "genres": {
+            "action": 3,
+            "adventure": 4,
+            "rpg": 3,
+            "simulation": 4,
+            "strategy": 4,
+            "casual": 0
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 3,
+            "adult": 4
+        }
+    },
+    {
+        "name": "G64",
+        "genres": {
+            "action": 3,
+            "adventure": 4,
+            "rpg": 3,
+            "simulation": 3,
+            "strategy": 4,
+            "casual": 1
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 3,
+            "adult": 4
+        }
+    },
+    {
+        "name": "TES",
+        "genres": {
+            "action": 2,
+            "adventure": 1,
+            "rpg": 2,
+            "simulation": 2,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 3,
+            "adult": 0
+        }
+    },
+    {
+        "name": "Master V",
+        "genres": {
+            "action": 3,
+            "adventure": 1,
+            "rpg": 2,
+            "simulation": 2,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 1
+        }
+    },
+    {
+        "name": "Gameling",
+        "genres": {
+            "action": 2,
+            "adventure": 1,
+            "rpg": 3,
+            "simulation": 3,
+            "strategy": 0,
+            "casual": 4
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 3,
+            "adult": 0
+        }
+    },
+    {
+        "name": "Vena Gear",
+        "genres": {
+            "action": 3,
+            "adventure": 2,
+            "rpg": 2,
+            "simulation": 3,
+            "strategy": 0,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 2
+        }
+    },
+    {
+        "name": "Vena Oasis",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 2,
+            "simulation": 3,
+            "strategy": 0,
+            "casual": 1
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "Super TES",
+        "genres": {
+            "action": 3,
+            "adventure": 3,
+            "rpg": 3,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 3,
+            "adult": 1
+        }
+    },
+    {
+        "name": "Playsystem",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 4,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 0
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "TES 64",
+        "genres": {
+            "action": 3,
+            "adventure": 2,
+            "rpg": 1,
+            "simulation": 2,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 3,
+            "adult": 3
+        }
+    },
+    {
+        "name": "DreamVast",
+        "genres": {
+            "action": 4,
+            "adventure": 1,
+            "rpg": 2,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 1
+        },
+        "audience": {
+            "young": 1,
+            "everyone": 4,
+            "adult": 4
+        }
+    },
+    {
+        "name": "Playsystem 2",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 4,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 2
+        }
+    },
+    {
+        "name": "mBox",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 3,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 1
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "Game Sphere",
+        "genres": {
+            "action": 2,
+            "adventure": 2,
+            "rpg": 1,
+            "simulation": 2,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 3,
+            "adult": 2
+        }
+    },
+    {
+        "name": "GS",
+        "genres": {
+            "action": 3,
+            "adventure": 3,
+            "rpg": 4,
+            "simulation": 3,
+            "strategy": 3,
+            "casual": 4
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 3,
+            "adult": 2
+        }
+    },
+    {
+        "name": "PPS",
+        "genres": {
+            "action": 4,
+            "adventure": 1,
+            "rpg": 4,
+            "simulation": 2,
+            "strategy": 2,
+            "casual": 2
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 3,
+            "adult": 4
+        }
+    },
+    {
+        "name": "mBox 360",
+        "genres": {
+            "action": 4,
+            "adventure": 3,
+            "rpg": 4,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 3,
+            "adult": 4
+        }
+    },
+    {
+        "name": "Nuu",
+        "genres": {
+            "action": 2,
+            "adventure": 0,
+            "rpg": 1,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 4,
+            "everyone": 4,
+            "adult": 1
+        }
+    },
+    {
+        "name": "Playsystem 3",
+        "genres": {
+            "action": 4,
+            "adventure": 3,
+            "rpg": 3,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 2
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "grPhone",
+        "genres": {
+            "action": 2,
+            "adventure": 2,
+            "rpg": 1,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 0
+        }
+    },
+    {
+        "name": "grPad",
+        "genres": {
+            "action": 2,
+            "adventure": 3,
+            "rpg": 1,
+            "simulation": 3,
+            "strategy": 3,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 0
+        }
+    },
+    {
+        "name": "mPad",
+        "genres": {
+            "action": 1,
+            "adventure": 3,
+            "rpg": 2,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 1,
+            "everyone": 3,
+            "adult": 2
+        }
+    },
+    {
+        "name": "Wuu",
+        "genres": {
+            "action": 3,
+            "adventure": 1,
+            "rpg": 2,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 1
+        }
+    },
+    {
+        "name": "OYA",
+        "genres": {
+            "action": 3,
+            "adventure": 1,
+            "rpg": 2,
+            "simulation": 3,
+            "strategy": 2,
+            "casual": 4
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "mBox One",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 3,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 1,
+            "everyone": 4,
+            "adult": 2
+        }
+    },
+    {
+        "name": "Playsystem 4",
+        "genres": {
+            "action": 4,
+            "adventure": 2,
+            "rpg": 4,
+            "simulation": 3,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    },
+    {
+        "name": "mBox Next",
+        "genres": {
+            "action": 3,
+            "adventure": 3,
+            "rpg": 3,
+            "simulation": 2,
+            "strategy": 1,
+            "casual": 4
+        },
+        "audience": {
+            "young": 3,
+            "everyone": 4,
+            "adult": 2
+        }
+    },
+    {
+        "name": "Playsystem 5",
+        "genres": {
+            "action": 4,
+            "adventure": 1,
+            "rpg": 3,
+            "simulation": 4,
+            "strategy": 1,
+            "casual": 3
+        },
+        "audience": {
+            "young": 2,
+            "everyone": 4,
+            "adult": 3
+        }
+    }
+]
