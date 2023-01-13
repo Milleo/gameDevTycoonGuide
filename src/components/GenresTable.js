@@ -1,8 +1,8 @@
 import { Table } from "react-bootstrap";
-import topicsData from "../data/topics.json";
 import { convertNumberToSymbols } from "../utils";
 
-const GenresTable = () => {
+const GenresTable = (props) => {
+    const { data } = props;
     return <Table striped bordered hover>
         <thead>
             <tr>
@@ -23,7 +23,7 @@ const GenresTable = () => {
             </tr>
         </thead>
         <tbody>
-        { topicsData.map((topic) => {
+        { data.map((topic) => {
             return <tr>
                 <td>{ topic.name }</td>
                 { Object.keys(topic.genres).map((genre) => { return <td className={`value${topic.genres[genre]}`}>
