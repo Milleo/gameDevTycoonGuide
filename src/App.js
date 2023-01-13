@@ -6,70 +6,48 @@ import topicsData from "./data/topics.json";
 import { useState } from 'react';
 
 function App() {
-  const [topicsDataFiltered, setTopicsDataFiltered] = useState(topicsData);
-  const [filteredGenres, setFilteredGenres] = useState(["action", "adventure", "rpg", "simulation", "strategy", "casual"]);
-  const [filteredAudiences, setFilteredAudiences] = useState(["young", "everyone", "adult"]);
+  const genresDefaultValues = ["action", "adventure", "rpg", "simulation", "strategy", "casual"];
+  const audiencesDefaultValues = ["young", "everyone", "adult"];
 
-  const handleChangeTopic = (values) => {
-    const valuesArr = values.map((v) => v.value);
-    if(valuesArr.length === 0){
-      setTopicsDataFiltered(topicsData);
-      return;
-    }
+  const [filteredData, setFilteredData] = useState(topicsData);
+  const [filteredGenres, setFilteredGenres] = useState(genresDefaultValues);
+  const [filteredAudiences, setFilteredAudiences] = useState(audiencesDefaultValues);
 
-    const result = topicsData.filter((v) => valuesArr.indexOf(v.name) > -1);
-    setTopicsDataFiltered(result);
-  }
-
-  const handleChangeGenre = (values) => {
-    const valuesArr = values.map((v) => v.value);
-    setFilteredGenres(valuesArr);
-    if(valuesArr.length === 0){
-      setTopicsDataFiltered(topicsData);
-      return;
-    }
+  const handleChange = (topics, genres, audiences) => {
+    const topicsArr = (topics.length == 0)?[]:topics.map((v) => v.value);
+    const genresArr = (genres.length == 0)?genresDefaultValues:genres.map((v) => v.value);
+    const audiencesArr = (audiences.length == 0)?audiencesDefaultValues:audiences.map((v) => v.value);
+    let result = topicsData;
     
-    const result = topicsData.map((topic, index) => {
+    setFilteredAudiences(audiencesArr);
+    setFilteredGenres(genresArr);
+
+    if(topicsArr.length > 0)
+      result = topicsData.filter((v) => topicsArr.indexOf(v.name) > -1);
+
+    result = result.map((topic, index) => {
       return {
         name: topic.name,
         genres: Object.keys(topicsData[index].genres)
-          .filter((genre) => valuesArr.indexOf(genre) > -1)
+          .filter((genre) => genresArr.indexOf(genre) > -1)
           .reduce((obj, key) => {
             return Object.assign(obj, { [key]: topic.genres[key] })
           }, {}),
-        audience: topicsData[index].audience
-      };
-    });
-
-    setTopicsDataFiltered(result);
-  }
-  const handleChangeAudience = (values) => {
-    const valuesArr = values.map((v) => v.value);
-    setFilteredAudiences(valuesArr);
-    if(valuesArr.length === 0){
-      setTopicsDataFiltered(topicsData);
-      return;
-    }
-    
-    const result = topicsData.map((topic, index) => {
-      return {
-        name: topic.name,
         audience: Object.keys(topicsData[index].audience)
-          .filter((genre) => valuesArr.indexOf(genre) > -1)
-          .reduce((obj, key) => {
-            return Object.assign(obj, { [key]: topic.audience[key] })
-          }, {}),
-        genres: topicsData[index].genres
+        .filter((genre) => audiencesArr.indexOf(genre) > -1)
+        .reduce((obj, key) => {
+          return Object.assign(obj, { [key]: topic.audience[key] })
+        }, {})
       };
     });
 
-    setTopicsDataFiltered(result);
+    setFilteredData(result);
   }
 
   return (
     <div className="App">
-      <FilterForm onChangeTopic={ handleChangeTopic } onChangeGenre={ handleChangeGenre } onChangeAudience={ handleChangeAudience } />
-      <GenresTable data={topicsDataFiltered} filteredGenres={ filteredGenres } filteredAudiences={ filteredAudiences } />
+      <FilterForm onChange={ handleChange } />
+      <GenresTable data={filteredData} filteredGenres={ filteredGenres } filteredAudiences={ filteredAudiences } />
     </div>
   );
 }
