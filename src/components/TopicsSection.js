@@ -15,9 +15,9 @@ const TopicsSection = () => {
     
 
     const handleChangeTopics = (topics, genres, audiences) => {
-        const topicsArr = (topics.length == 0)?[]:topics.map((v) => v.value);
-        const genresArr = (genres.length == 0)?genresDefaultValues:genres.map((v) => v.value);
-        const audiencesArr = (audiences.length == 0)?audiencesDefaultValues:audiences.map((v) => v.value);
+        const topicsArr = (topics.length === 0)?[]:topics.map((v) => v.value);
+        const genresArr = (genres.length === 0)?genresDefaultValues:genres.map((v) => v.value);
+        const audiencesArr = (audiences.length === 0)?audiencesDefaultValues:audiences.map((v) => v.value);
         let result = topicsData;
         
         setFilteredAudiences(audiencesArr);
