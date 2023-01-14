@@ -3,9 +3,13 @@ import topicsData from "../data/topics.json";
 import platformsData from "../data/platforms.json";
 import { Fragment, useState } from "react";
 import TopicsTable from "./TopicsTable";
+import PlatformsTable from "./PlatformsTable";
+import { Col, Row } from "react-bootstrap";
 
 const BestMatchesSection = () => {
     const genresDefaultValues = ["action", "adventure", "rpg", "simulation", "strategy", "casual"];
+    
+    const [filteredPlatforms, setFilteredPlatforms] = useState(platformsData);
     const [filteredGenres, setFilteredGenres] = useState(genresDefaultValues);
     const [filteredData, setFilteredData] = useState(topicsData);
     const [filteredAudiences, setFilteredAudiences] = useState([]);
@@ -22,8 +26,9 @@ const BestMatchesSection = () => {
         if(topicsArr.length > 0)
             result = topicsData.filter((v) => topicsArr.indexOf(v.name) > -1);
 
+        let platformObjs = platformsData;
         if(platformsArr.length > 0){
-            let platformObjs = platformsData.filter((p) => platformsArr.indexOf(p.name) > -1);
+            platformObjs = platformsData.filter((p) => platformsArr.indexOf(p.name) > -1);
             platformObjs.forEach((p) => {
                 Object.keys(p.genres).forEach((genreKey) => {
                     const val = p.genres[genreKey];
@@ -32,6 +37,7 @@ const BestMatchesSection = () => {
                     }
                 });
             });
+            setFilteredPlatforms(platformObjs);
         }else{
             Object.keys(platformsData[0].genres).map((genre) => bestGenres.push(genre));
         }
@@ -57,6 +63,24 @@ const BestMatchesSection = () => {
             };
         });
 
+        platformObjs = platformObjs.map((topic, index) => {
+            return {
+                name: topic.name,
+                genres: Object.keys(platformObjs[index].genres)
+                .filter((genre) => bestGenres.indexOf(genre) > -1)
+                .reduce((obj, key) => {
+                    return Object.assign(obj, { [key]: topic.genres[key] })
+                }, {}),
+                audience: Object.keys(platformObjs[index].audience)
+                .filter((aud) => audiencesArr.indexOf(aud) > -1)
+                .reduce((obj, key) => {
+                return Object.assign(obj, { [key]: topic.audience[key] })
+                }, {})
+            };
+        });
+
+        setFilteredPlatforms(platformObjs);
+
         /* Removing any Topic that has less than 4 of score */
         result = result.filter((r) => {
             return Object.values(r.genres).some((v) => v === 4)
@@ -81,7 +105,14 @@ const BestMatchesSection = () => {
 
     return <Fragment>
         <FilterFormMatches onChange={ handleChange } />
-        <TopicsTable data={filteredData} filteredAudiences={filteredAudiences} filteredGenres={filteredGenres} />
+        <Row>
+            <Col md="6">
+                <PlatformsTable data={filteredPlatforms} filteredGenres={ filteredGenres } filteredAudiences={ filteredAudiences } />
+            </Col>
+            <Col md="6">
+                <TopicsTable data={filteredData} filteredAudiences={filteredAudiences} filteredGenres={filteredGenres} />
+            </Col>
+        </Row>
     </Fragment>
 }
 

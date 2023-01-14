@@ -36,4 +36,7 @@ export const GlobalStyles = createGlobalStyle`
   .nav-link:hover {
     color: ${({ theme }) => theme.linkColor};
   }
+  .multiSelect{
+    color: #363537;
+  }
   `

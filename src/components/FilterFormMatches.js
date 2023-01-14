@@ -24,11 +24,11 @@ const FilterFormMatches = (props) => {
             <Form className="p-4">
                 <Form.Group className="mb-3">
                     <Form.Label>{ t({id: "filter.matches.platforms" })}</Form.Label>
-                    <Select onChange={setPlatforms} options={platformOptions} isMulti></Select>
+                    <Select className="multiSelect" onChange={setPlatforms} options={platformOptions} isMulti></Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>{ t({id: "filter.matches.topics" })}</Form.Label>
-                    <Select onChange={setTopics} options={topicsOptions} isMulti></Select>
+                    <Select className="multiSelect" onChange={setTopics} options={topicsOptions} isMulti></Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Check onClick={(e) => setAudienceAvailable(e.target.checked)} type="switch" label={ t({id: "filter.matches.audience" })} id="audience-available" />
