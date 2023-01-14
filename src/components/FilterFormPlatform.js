@@ -13,7 +13,7 @@ const FilterFormPlatform = (props) => {
     const audiencesOptions = Object.keys(platformsData[0].audience).map((aud) => { return { value: aud, label: aud } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
-    useEffect(() => onChange(platforms, genres, audiences), [platforms, genres, audiences])
+    useEffect(() => onChange(platforms, genres, audiences), [platforms, genres, audiences, onChange])
     
     return <Container>
         <Card className="mb-3">

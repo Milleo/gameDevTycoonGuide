@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Card, Col, Form, Row } from "react-bootstrap";
 import { useIntl } from "react-intl";
 import Select from 'react-select';
 import platformsData from "../data/platforms.json";
@@ -17,7 +17,7 @@ const FilterFormMatches = (props) => {
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
-    useEffect(() => onChange(platforms, topics, audienceAvailable, casualAvailable), [topics, platforms, audienceAvailable, casualAvailable])
+    useEffect(() => onChange(platforms, topics, audienceAvailable, casualAvailable), [topics, platforms, audienceAvailable, casualAvailable, onChange])
     
     return <Row>
         <Col md="6">

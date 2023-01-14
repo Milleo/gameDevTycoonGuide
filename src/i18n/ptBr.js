@@ -1,4 +1,4 @@
-export default {
+const messages = {
     "filter.title": "Filtro",
     "filter.matches.platforms": "Plataformas disponíveis",
     "filter.matches.topics": "Tópicos disponíveis",
@@ -14,3 +14,5 @@ export default {
     "genres.strategy": "Estratégia",
     "genres.casual": "Casual"
 }
+
+export default messages;

@@ -10,7 +10,7 @@ const StagesGuide = () => {
         { name: "Casual", grades: [0, 4, 1, 1, 4, 0, 1, 4, 3] },
     ];
     const convertValuesToSymbols = (val) => {
-        if(val == 2) return "~";
+        if(val === 2) return "~";
         if(val > 2){
             return "+".repeat(val - 1)
         }else{

@@ -25,6 +25,7 @@ const TopicsTable = (props) => {
             if(filteredGenres.indexOf(col.value) > -1){
                 return col;
             }
+            return null;
         });
     }
 
@@ -34,6 +35,7 @@ const TopicsTable = (props) => {
             if(filteredAudiences.indexOf(col.value) > -1){
                 return col;
             }
+            return null;
         });
     }
     

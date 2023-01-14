@@ -13,7 +13,7 @@ const FilterFormTopics = (props) => {
     const genresOptions = Object.keys(topicsData[0].genres).map((genre) => { return { value: genre, label: genre } });
     const audiencesOptions = Object.keys(topicsData[0].audience).map((aud) => { return { value: aud, label: aud } });
 
-    useEffect(() => onChange(topics, genres, audiences), [topics, genres, audiences])
+    useEffect(() => onChange(topics, genres, audiences), [topics, genres, audiences, onChange])
     
     return <Container>
         <Card className="mb-3">
