@@ -21,19 +21,19 @@ const FilterFormPlatform = (props) => {
             <Form className="p-4">
                 <Form.Group className="mb-3">
                     <Form.Label>Platforms</Form.Label>
-                    <Select onChange={setPlatforms} options={platformOptions} isMulti></Select>
+                    <Select className="multiSelect" onChange={setPlatforms} options={platformOptions} isMulti></Select>
                 </Form.Group>
                 <Row>
                     <Col md="8">
                         <Form.Group className="mb-3">
                             <Form.Label>Genres</Form.Label>
-                            <Select onChange={setGenres} options={genresOptions} isMulti></Select>
+                            <Select className="multiSelect" onChange={setGenres} options={genresOptions} isMulti></Select>
                         </Form.Group>
                     </Col>
                     <Col md="4">
                         <Form.Group className="mb-3">
                             <Form.Label>Audience</Form.Label>
-                            <Select onChange={setAudiences} options={audiencesOptions} isMulti></Select>
+                            <Select className="multiSelect" onChange={setAudiences} options={audiencesOptions} isMulti></Select>
                         </Form.Group>
                     </Col>
                 </Row>
