@@ -4,6 +4,7 @@ import { useIntl } from "react-intl";
 import Select from 'react-select';
 import platformsData from "../data/platforms.json";
 import topicsData from "../data/topics.json";
+import StagesGuide from "./StagesGuide";
 
 const FilterFormMatches = (props) => {
     const { onChange } = props;
@@ -18,8 +19,9 @@ const FilterFormMatches = (props) => {
 
     useEffect(() => onChange(platforms, topics, audienceAvailable, casualAvailable), [topics, platforms, audienceAvailable, casualAvailable])
     
-    return <Container>
-        <Card className="my-3">
+    return <Row>
+        <Col md="6">
+        <Card className="mb-3">
             <Card.Header>{ t({id: "filter.title" })}</Card.Header>
             <Form className="p-4">
                 <Form.Group className="mb-3">
@@ -36,7 +38,11 @@ const FilterFormMatches = (props) => {
                 </Form.Group>
             </Form>
         </Card>
-    </Container>
+        </Col>
+        <Col md="6">
+            <StagesGuide />
+        </Col>
+    </Row>
 }
 
 export default FilterFormMatches;

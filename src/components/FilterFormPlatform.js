@@ -16,7 +16,7 @@ const FilterFormPlatform = (props) => {
     useEffect(() => onChange(platforms, genres, audiences), [platforms, genres, audiences])
     
     return <Container>
-        <Card className="my-3">
+        <Card className="mb-3">
             <Card.Header>Filter</Card.Header>
             <Form className="p-4">
                 <Form.Group className="mb-3">

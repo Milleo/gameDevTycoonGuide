@@ -12,6 +12,9 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-size: 0.8rem;
   }
+  .table{
+    font-size: 0.65rem;
+  }
   td.value0{ background-color: rgb(150,50,50); }
   td.value1{ background-color: rgb(120,60,60) }
   td.value2{ background-color: rgb(70,90,70); }
@@ -38,5 +41,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   .multiSelect{
     color: #363537;
+  }
+  .tab-content{
+    padding-top: 20px;
   }
   `

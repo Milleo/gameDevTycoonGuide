@@ -17,10 +17,10 @@ function App() {
   const [ messages, setMessages ] = useState(enMessages);
   
   useEffect(() => {
-    if(localStorage.getItem("lang") == undefined){
+    if(localStorage.getItem("lang") === undefined){
       const browserLanguage = (navigator.language || navigator.userLanguage).toLowerCase()
       setLang(browserLanguage);
-      if(browserLanguage != "pt-br"){
+      if(browserLanguage !== "pt-br"){
         setMessages(enMessages);
       }else{
         setMessages(ptBrMessages);
@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   const toggleDarkTheme = () => {
-    const usedTheme = theme=="light"?"dark":"light";
+    const usedTheme = theme==="light"?"dark":"light";
     setTheme(usedTheme);
     localStorage.setItem("theme", usedTheme);
   }
@@ -40,7 +40,7 @@ function App() {
   const changeLang = (_, el) => {
     setLang(el.target.dataset.country);
     localStorage.setItem("lang", el.target.dataset.country);
-    if(el.target.dataset.country != "pt-br"){
+    if(el.target.dataset.country !== "pt-br"){
       setMessages(enMessages);
     }else{
       setMessages(ptBrMessages);
