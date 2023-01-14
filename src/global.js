@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
+    font-size: 0.8rem;
   }
   td.value0{ background-color: rgb(150,50,50); }
   td.value1{ background-color: rgb(120,60,60) }
@@ -26,8 +27,13 @@ export const GlobalStyles = createGlobalStyle`
   }
   .card {
     background: ${({ theme }) => theme.body};
+    border-color: ${({ theme }) => theme.borderColor};
   }
-  .nav-link {
+  .card-header {
+    border-color: ${({ theme }) => theme.borderColor};
+  }
+  .nav-link,
+  .nav-link:hover {
     color: ${({ theme }) => theme.linkColor};
   }
   `
