@@ -15,21 +15,28 @@ function App() {
   const [ theme, setTheme ] = useState("light");
   const [ lang, setLang ] = useState("en");
   const [ messages, setMessages ] = useState(enMessages);
+  
+  useEffect(() => {
+    if(localStorage.getItem("lang") == undefined){
+      const browserLanguage = (navigator.language || navigator.userLanguage).toLowerCase()
+      setLang(browserLanguage);
+      if(browserLanguage != "pt-br"){
+        setMessages(enMessages);
+      }else{
+        setMessages(ptBrMessages);
+      }
+    }else{
+      setLang(localStorage.getItem("lang"));
+    }
+    setTheme(localStorage.getItem("theme"));
+  }, []);
+
   const toggleDarkTheme = () => {
     const usedTheme = theme=="light"?"dark":"light";
     setTheme(usedTheme);
     localStorage.setItem("theme", usedTheme);
   }
-  useEffect(() => {
-    const browserLanguage = (navigator.language || navigator.userLanguage).toLowerCase()
-    setLang(browserLanguage);
-    if(browserLanguage != "pt-br"){
-      setMessages(enMessages);
-    }else{
-      setMessages(ptBrMessages);
-    }
-    setTheme(localStorage.getItem("theme"));
-  }, []);
+
   const changeLang = (_, el) => {
     setLang(el.target.dataset.country);
     localStorage.setItem("lang", el.target.dataset.country);
