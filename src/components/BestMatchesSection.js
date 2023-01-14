@@ -10,7 +10,7 @@ const BestMatchesSection = () => {
     const [filteredData, setFilteredData] = useState(topicsData);
     const [filteredAudiences, setFilteredAudiences] = useState([]);
 
-    const handleChange = (platforms, topics, hasAudience) => {
+    const handleChange = (platforms, topics, hasAudience, hasCasual) => {
         const platformsArr = platforms.map((p) => p.value);
         const topicsArr = topics.map((t) => t.value);
         
@@ -34,6 +34,10 @@ const BestMatchesSection = () => {
             });
         }else{
             Object.keys(platformsData[0].genres).map((genre) => bestGenres.push(genre));
+        }
+
+        if(!hasCasual && bestGenres.indexOf("casual") > -1){
+            bestGenres.splice(bestGenres.indexOf("casual"), 1);
         }
         
         /* Filtering by audience an removing genres not filtered */

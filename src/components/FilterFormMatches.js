@@ -9,11 +9,12 @@ const FilterFormMatches = (props) => {
     const [ topics, setTopics ] = useState([]);
     const [ platforms, setPlatforms ] = useState([]);
     const [ audienceAvailable, setAudienceAvailable ] = useState(false);
+    const [ casualAvailable, setCasualAvailable ] = useState(false);
 
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
-    useEffect(() => onChange(platforms, topics, audienceAvailable), [topics, platforms, audienceAvailable])
+    useEffect(() => onChange(platforms, topics, audienceAvailable, casualAvailable), [topics, platforms, audienceAvailable, casualAvailable])
     
     return <Container>
         <Card className="my-3">
@@ -29,6 +30,7 @@ const FilterFormMatches = (props) => {
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Check onClick={(e) => setAudienceAvailable(e.target.checked)} type="switch" label="Audience is available" id="audience-available" />
+                    <Form.Check onClick={(e) => setCasualAvailable(e.target.checked)} type="switch" label="Casual games are available" id="casual-games-available" />
                 </Form.Group>
             </Form>
         </Card>
