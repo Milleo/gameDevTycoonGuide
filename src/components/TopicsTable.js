@@ -1,15 +1,17 @@
 import { Table } from "react-bootstrap";
+import { useIntl } from "react-intl";
 import { convertNumberToSymbols } from "../utils";
 
 const TopicsTable = (props) => {
     const { data, filteredGenres, filteredAudiences } = props;
+    const t = useIntl().formatMessage;
     const genreColumns = [
-        { value: "action", label: "Action" },
-        { value: "adventure", label: "Adventure" },
-        { value: "rpg", label: "RPG" },
-        { value: "simulation", label: "Simulation" },
-        { value: "strategy", label: "Strategy" },
-        { value: "casual", label: "Casual" }
+        { value: "action", label: t({ id: "genres.action" }) },
+        { value: "adventure", label: t({ id: "genres.adventure" }) },
+        { value: "rpg", label: t({ id: "genres.rpg" }) },
+        { value: "simulation", label: t({ id: "genres.simulation" }) },
+        { value: "strategy", label: t({ id: "genres.strategy" }) },
+        { value: "casual", label: t({ id: "genres.casual" }) }
     ];
     const audienceColumns = [
         { value: "young", label: "Y" },
@@ -38,9 +40,9 @@ const TopicsTable = (props) => {
     return <Table striped bordered hover>
         <thead>
             <tr>
-                <th rowSpan={2}>Topic</th>
-                <th colSpan={genreFilteredColumns.length}>Genres</th>
-                <th colSpan={audienceFilteredColumns.length}>Audiences</th>
+                <th rowSpan={2}>{t({ id: "topicsTable.topic" })}</th>
+                <th colSpan={genreFilteredColumns.length}>{t({ id: "topicsTable.genres" })}</th>
+                <th colSpan={audienceFilteredColumns.length}>{t({ id: "topicsTable.audiences" })}</th>
             </tr>
             <tr>
                 { genreFilteredColumns.map((column) => {

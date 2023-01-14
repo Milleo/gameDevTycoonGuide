@@ -9,7 +9,7 @@ const BestMatchesSection = () => {
     const [filteredGenres, setFilteredGenres] = useState(genresDefaultValues);
     const [filteredData, setFilteredData] = useState(topicsData);
     const [filteredAudiences, setFilteredAudiences] = useState([]);
-
+    
     const handleChange = (platforms, topics, hasAudience, hasCasual) => {
         const platformsArr = platforms.map((p) => p.value);
         const topicsArr = topics.map((t) => t.value);
