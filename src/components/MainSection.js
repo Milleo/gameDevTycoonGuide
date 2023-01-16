@@ -8,13 +8,13 @@ const MainSection = () => {
     const t = useIntl().formatMessage;
     return <Tabs defaultacitvekey="best">
         <Tab eventKey="best" title={t({ id: "tabs.best"})}>
-        <BestMatchesSection />
+            <BestMatchesSection />
         </Tab>
         <Tab eventKey="topics" title={t({ id: "tabs.topics"})}>
-        <TopicsSection />
+            <TopicsSection />
         </Tab>
         <Tab eventKey="platforms" title={t({ id: "tabs.platforms"})}>
-        <PlatformsSection />
+            <PlatformsSection />
         </Tab>
     </Tabs>
 }
