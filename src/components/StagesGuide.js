@@ -45,8 +45,8 @@ const StagesGuide = () => {
                     { data.map((d) => {
                         return <tr key={d.name}>
                             <td>{d.name}</td>
-                            { d.grades.map((g) => {
-                                return <td className={`value${g}`}>{convertValuesToSymbols(g)}</td>;
+                            { d.grades.map((g,i) => {
+                                return <td key={`${d.name}_${g}_${i}`} className={`value${g}`}>{convertValuesToSymbols(g)}</td>;
                             })}
                         </tr>
                     })}
