@@ -10,7 +10,7 @@ const PlatformsSection = () => {
     const [filteredGenres, setFilteredGenres] = useState(genresDefaultValues);
     const [filteredAudiences, setFilteredAudiences] = useState(audiencesDefaultValues);
 
-    const handleChangePlatforms = (platforms, genres, audiences) => {
+    const handleChangePlatforms = ({platforms, genres, audiences}) => {
         const platformArr = (platforms.length === 0)?[]:platforms.map((v) => v.value);
         const genresArr = (genres.length === 0)?genresDefaultValues:genres.map((v) => v.value);
         const audiencesArr = (audiences.length === 0)?audiencesDefaultValues:audiences.map((v) => v.value);

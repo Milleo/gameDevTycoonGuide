@@ -1,33 +1,18 @@
-import { useState } from "react";
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
 import Select from 'react-select';
 import platformsData from "../data/platforms.json";
 
 const FilterFormPlatform = (props) => {
     const { onChange } = props;
-    const [ genres, setGenres ] = useState([]);
-    const [ audiences, setAudiences ] = useState([]);
-    const [ platforms, setPlatforms ] = useState([]);
+    const formData = { "platforms": [], "genres": [], "audiences": []}
 
     const genresOptions = Object.keys(platformsData[0].genres).map((genre) => { return { value: genre, label: genre } });
     const audiencesOptions = Object.keys(platformsData[0].audience).map((aud) => { return { value: aud, label: aud } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
     const handleChange = (value, field) => {
-        switch(field){
-            case "platforms":
-                setPlatforms(value);
-                break;
-            case "genres":
-                setGenres(value);
-                break;
-            case "audiences":
-                setAudiences(value);
-                break;
-            default:
-                break;
-        }
-        onChange(platforms, genres, audiences);
+        formData[field] = value
+        onChange(formData);
     }
     
     return <Container>
