@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
 import Select from 'react-select';
 import platformsData from "../data/platforms.json";
@@ -13,7 +13,22 @@ const FilterFormPlatform = (props) => {
     const audiencesOptions = Object.keys(platformsData[0].audience).map((aud) => { return { value: aud, label: aud } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
-    useEffect(() => onChange(platforms, genres, audiences), [platforms, genres, audiences, onChange])
+    const handleChange = (value, field) => {
+        switch(field){
+            case "platforms":
+                setPlatforms(value);
+                break;
+            case "genres":
+                setGenres(value);
+                break;
+            case "audiences":
+                setAudiences(value);
+                break;
+            default:
+                break;
+        }
+        onChange(platforms, genres, audiences);
+    }
     
     return <Container>
         <Card className="mb-3">
@@ -21,19 +36,19 @@ const FilterFormPlatform = (props) => {
             <Form className="p-4">
                 <Form.Group className="mb-3">
                     <Form.Label>Platforms</Form.Label>
-                    <Select className="multiSelect" onChange={setPlatforms} options={platformOptions} isMulti></Select>
+                    <Select className="multiSelect" onChange={(values) => handleChange(values, "platforms")} options={platformOptions} isMulti></Select>
                 </Form.Group>
                 <Row>
                     <Col md="8">
                         <Form.Group className="mb-3">
                             <Form.Label>Genres</Form.Label>
-                            <Select className="multiSelect" onChange={setGenres} options={genresOptions} isMulti></Select>
+                            <Select className="multiSelect" onChange={(values) => handleChange(values, "genres")} options={genresOptions} isMulti></Select>
                         </Form.Group>
                     </Col>
                     <Col md="4">
                         <Form.Group className="mb-3">
                             <Form.Label>Audience</Form.Label>
-                            <Select className="multiSelect" onChange={setAudiences} options={audiencesOptions} isMulti></Select>
+                            <Select className="multiSelect" onChange={(values) => handleChange(values, "audiences")} options={audiencesOptions} isMulti></Select>
                         </Form.Group>
                     </Col>
                 </Row>
