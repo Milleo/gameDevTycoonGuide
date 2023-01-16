@@ -8,33 +8,16 @@ import StagesGuide from "./StagesGuide";
 
 const FilterFormMatches = (props) => {
     const { onChange } = props;
-    const [ topics, setTopics ] = useState([]);
-    const [ platforms, setPlatforms ] = useState([]);
-    const [ audienceAvailable, setAudienceAvailable ] = useState(false);
-    const [ casualAvailable, setCasualAvailable ] = useState(false);
+    const [ formData, setFormData ] = useState({ topics: [], platforms: [], hasAudience: false, hasCasual: false });
     const t = useIntl().formatMessage;
 
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
     const platformOptions = platformsData.map((platform) => { return { value: platform.name, label: platform.name } });
 
     const handleChange = (value, field) => {
-        switch(field){
-            case "platforms":
-                setPlatforms(value);
-                break;
-            case "topics":
-                setTopics(value);
-                break;
-            case "audienceAvailable":
-                setAudienceAvailable(value);
-                break;
-            case "casualAvailable":
-                setCasualAvailable(value);
-                break;
-            default:
-                break;
-        }
-        onChange(platforms, topics, audienceAvailable, casualAvailable);
+        formData[field] = value;
+        setFormData(formData);
+        onChange(formData);
     }
     
     return <Row>
@@ -51,8 +34,8 @@ const FilterFormMatches = (props) => {
                     <Select className="multiSelect" onChange={(values) => handleChange(values, "topics")} options={topicsOptions} isMulti></Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Check onClick={(e) => handleChange(e.target.checked, "audienceAvailable")} type="switch" label={ t({id: "filter.matches.audience" })} id="audience-available" />
-                    <Form.Check onClick={(e) => handleChange(e.target.checked, "casualAvailable")} type="switch" label={ t({id: "filter.matches.casual" })} id="casual-games-available" />
+                    <Form.Check onClick={(e) => handleChange(e.target.checked, "hasAudience")} type="switch" label={ t({id: "filter.matches.audience" })} id="audience-available" />
+                    <Form.Check onClick={(e) => handleChange(e.target.checked, "hasCasual")} type="switch" label={ t({id: "filter.matches.casual" })} id="casual-games-available" />
                 </Form.Group>
             </Form>
         </Card>
