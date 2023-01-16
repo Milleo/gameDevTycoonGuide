@@ -15,7 +15,21 @@ const messages = {
     "genres.rpg": "RPG",
     "genres.simulation": "Simulação",
     "genres.strategy": "Estratégia",
-    "genres.casual": "Casual"
+    "genres.casual": "Casual",
+    "stagesDevelopment": "Estágios de desenvolvimento",
+    "stagesDevelopment.engine": "Engine",
+    "stagesDevelopment.gameplay": "Jogabilidade",
+    "stagesDevelopment.story": "História/Missoes",
+    "stagesDevelopment.dialogues": "Diálogos",
+    "stagesDevelopment.levelDesign": "Design dos níveis",
+    "stagesDevelopment.ai": "IA",
+    "stagesDevelopment.worldDesign": "Design do mundo",
+    "stagesDevelopment.graphics": "Gráficos",
+    "stagesDevelopment.sound": "Som",
+    "stagesGuide.Genre": "Gênero",
+    "stagesGuide.stage1": "Estágio 1",
+    "stagesGuide.stage2": "Estágio 2",
+    "stagesGuide.stage3": "Estágio 3" 
 }
 
 export default messages;

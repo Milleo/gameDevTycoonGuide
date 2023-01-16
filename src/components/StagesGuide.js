@@ -1,13 +1,16 @@
 import { Card, Table } from "react-bootstrap"
+import { useIntl } from "react-intl";
 
 const StagesGuide = () => {
+    const t = useIntl().formatMessage;
+
     const data = [
-        { name: "Action", grades: [4, 3, 1, 0, 3, 4, 2, 4, 3] },
-        { name: "Adventure", grades: [1, 2, 4, 4, 2, 1, 4, 3, 2] },
-        { name: "RPG", grades: [1, 3, 4, 4, 3, 2, 4, 3, 2] },
-        { name: "Simulation", grades: [3, 4, 2, 1, 3, 4, 2, 4, 3] },
-        { name: "Strategy", grades: [3, 4, 2, 1, 4, 3, 4, 2, 3] },
-        { name: "Casual", grades: [0, 4, 1, 1, 4, 0, 1, 4, 3] },
+        { name: t({ id: "genres.action" }), grades: [4, 3, 1, 0, 3, 4, 2, 4, 3] },
+        { name: t({ id: "genres.adventure" }), grades: [1, 2, 4, 4, 2, 1, 4, 3, 2] },
+        { name: t({ id: "genres.rpg" }), grades: [1, 3, 4, 4, 3, 2, 4, 3, 2] },
+        { name: t({ id: "genres.simulation" }), grades: [3, 4, 2, 1, 3, 4, 2, 4, 3] },
+        { name: t({ id: "genres.strategy" }), grades: [3, 4, 2, 1, 4, 3, 4, 2, 3] },
+        { name: t({ id: "genres.casual" }), grades: [0, 4, 1, 1, 4, 0, 1, 4, 3] },
     ];
     const convertValuesToSymbols = (val) => {
         if(val === 2) return "~";
@@ -19,26 +22,26 @@ const StagesGuide = () => {
     }
 
     return <Card className="mb-3">
-        <Card.Header>Stages of development</Card.Header>
+        <Card.Header>{t({id: "stagesDevelopment"})}</Card.Header>
         <Card.Body>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th rowSpan={2}>Genre</th>
-                        <th colSpan={3}>Stage 1</th>
-                        <th colSpan={3}>Stage 2</th>
-                        <th colSpan={3}>Stage 3</th>
+                        <th rowSpan={2}>{t({id: "stagesGuide.Genre" })}</th>
+                        <th colSpan={3}>{t({id: "stagesGuide.stage1" })}</th>
+                        <th colSpan={3}>{t({id: "stagesGuide.stage2" })}</th>
+                        <th colSpan={3}>{t({id: "stagesGuide.stage3" })}</th>
                     </tr>
                     <tr>
-                        <th>Engine</th>
-                        <th>Gameplay</th>
-                        <th>Story/Quests</th>
-                        <th>Dialogues</th>
-                        <th>Level Design</th>
-                        <th>AI</th>
-                        <th>World Design</th>
-                        <th>Graphics</th>
-                        <th>Sound</th>
+                        <th>{t({ id: "stagesDevelopment.engine" })}</th>
+                        <th>{t({ id: "stagesDevelopment.gameplay" })}</th>
+                        <th>{t({ id: "stagesDevelopment.story" })}</th>
+                        <th>{t({ id: "stagesDevelopment.dialogues" })}</th>
+                        <th>{t({ id: "stagesDevelopment.levelDesign" })}</th>
+                        <th>{t({ id: "stagesDevelopment.ai" })}</th>
+                        <th>{t({ id: "stagesDevelopment.worldDesign" })}</th>
+                        <th>{t({ id: "stagesDevelopment.graphics" })}</th>
+                        <th>{t({ id: "stagesDevelopment.sound" })}</th>
                     </tr>
                 </thead>
                 <tbody>
