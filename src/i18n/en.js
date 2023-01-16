@@ -1,10 +1,13 @@
 const messages = {
     "tabs.best": "Find best matches",
-    "tabs.topics": "Topics",
-    "tabs.platforms": "Platforms",
+    "topics": "Topics",
+    "platform": "Platform",
+    "platforms": "Platforms",
+    "genre": "Gênero",
+    "genres": "Gêneros",
+    "audience": "Audience",
+    "audiences": "Audiences",
     "filter.title": "Filter",
-    "filter.matches.platforms": "Available Platforms",
-    "filter.matches.topics": "Available Topics",
     "filter.matches.audience": "Target audiences are available",
     "filter.matches.casual": "Casual games are available",
     "topicsTable.topic": "Topic",
@@ -26,10 +29,12 @@ const messages = {
     "stagesDevelopment.worldDesign": "World Design",
     "stagesDevelopment.graphics": "Graphics",
     "stagesDevelopment.sound": "Sound",
-    "stagesGuide.Genre": "Genre",
     "stagesGuide.stage1": "Stage 1",
     "stagesGuide.stage2": "Stage 2",
-    "stagesGuide.stage3": "Stage 3" 
+    "stagesGuide.stage3": "Stage 3",
+    "audienceLabels.young": "Y",
+    "audienceLabels.everyone": "E",
+    "audienceLabels.adult": "A",
 }
 
 export default messages;

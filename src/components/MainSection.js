@@ -10,10 +10,10 @@ const MainSection = () => {
         <Tab eventKey="best" title={t({ id: "tabs.best"})}>
             <BestMatchesSection />
         </Tab>
-        <Tab eventKey="topics" title={t({ id: "tabs.topics"})}>
+        <Tab eventKey="topics" title={t({ id: "topics"})}>
             <TopicsSection />
         </Tab>
-        <Tab eventKey="platforms" title={t({ id: "tabs.platforms"})}>
+        <Tab eventKey="platforms" title={t({ id: "platforms"})}>
             <PlatformsSection />
         </Tab>
     </Tabs>

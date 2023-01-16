@@ -1,7 +1,12 @@
 const messages = {
     "tabs.best": "Encontrar melhores combinações",
-    "tabs.topics": "Tópicos",
-    "tabs.platforms": "Platformas",
+    "topics": "Tópicos",
+    "platform": "Platforma",
+    "platforms": "Platformas",
+    "genre": "Gênero",
+    "genres": "Gêneros",
+    "audience": "Público alvo",
+    "audiences": "Públicos alvo",
     "filter.title": "Filtro",
     "filter.matches.platforms": "Plataformas disponíveis",
     "filter.matches.topics": "Tópicos disponíveis",
@@ -26,10 +31,12 @@ const messages = {
     "stagesDevelopment.worldDesign": "Design do mundo",
     "stagesDevelopment.graphics": "Gráficos",
     "stagesDevelopment.sound": "Som",
-    "stagesGuide.Genre": "Gênero",
     "stagesGuide.stage1": "Estágio 1",
     "stagesGuide.stage2": "Estágio 2",
-    "stagesGuide.stage3": "Estágio 3" 
+    "stagesGuide.stage3": "Estágio 3",
+    "audienceLabels.young": "I",
+    "audienceLabels.everyone": "T",
+    "audienceLabels.adult": "A",
 }
 
 export default messages;

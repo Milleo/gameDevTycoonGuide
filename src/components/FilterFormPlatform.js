@@ -1,9 +1,11 @@
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
+import { useIntl } from "react-intl";
 import Select from 'react-select';
 import platformsData from "../data/platforms.json";
 
 const FilterFormPlatform = (props) => {
     const { onChange } = props;
+    const t = useIntl().formatMessage;
     const formData = { "platforms": [], "genres": [], "audiences": []}
 
     const genresOptions = Object.keys(platformsData[0].genres).map((genre) => { return { value: genre, label: genre } });
@@ -17,22 +19,22 @@ const FilterFormPlatform = (props) => {
     
     return <Container>
         <Card className="mb-3">
-            <Card.Header>Filter</Card.Header>
+            <Card.Header>{ t({id: "filter.title" })}</Card.Header>
             <Form className="p-4">
                 <Form.Group className="mb-3">
-                    <Form.Label>Platforms</Form.Label>
+                    <Form.Label>{ t({id: "platforms" })}</Form.Label>
                     <Select className="multiSelect" onChange={(values) => handleChange(values, "platforms")} options={platformOptions} isMulti></Select>
                 </Form.Group>
                 <Row>
                     <Col md="8">
                         <Form.Group className="mb-3">
-                            <Form.Label>Genres</Form.Label>
+                            <Form.Label>{ t({id: "genres" })}</Form.Label>
                             <Select className="multiSelect" onChange={(values) => handleChange(values, "genres")} options={genresOptions} isMulti></Select>
                         </Form.Group>
                     </Col>
                     <Col md="4">
                         <Form.Group className="mb-3">
-                            <Form.Label>Audience</Form.Label>
+                            <Form.Label>{ t({id: "audience" })}</Form.Label>
                             <Select className="multiSelect" onChange={(values) => handleChange(values, "audiences")} options={audiencesOptions} isMulti></Select>
                         </Form.Group>
                     </Col>

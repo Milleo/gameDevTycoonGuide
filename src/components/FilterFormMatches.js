@@ -24,11 +24,11 @@ const FilterFormMatches = (props) => {
             <Card.Header>{ t({id: "filter.title" })}</Card.Header>
             <Form className="p-4">
                 <Form.Group className="mb-3">
-                    <Form.Label>{ t({id: "filter.matches.platforms" })}</Form.Label>
+                    <Form.Label>{ t({id: "platforms" })}</Form.Label>
                     <Select className="multiSelect" onChange={(values) => handleChange(values, "platforms")} options={platformOptions} isMulti></Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>{ t({id: "filter.matches.topics" })}</Form.Label>
+                    <Form.Label>{ t({id: "topics" })}</Form.Label>
                     <Select className="multiSelect" onChange={(values) => handleChange(values, "topics")} options={topicsOptions} isMulti></Select>
                 </Form.Group>
                 <Form.Group className="mb-3">

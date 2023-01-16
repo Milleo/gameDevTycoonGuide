@@ -27,7 +27,7 @@ const StagesGuide = () => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th rowSpan={2}>{t({id: "stagesGuide.Genre" })}</th>
+                        <th rowSpan={2}>{t({id: "genre" })}</th>
                         <th colSpan={3}>{t({id: "stagesGuide.stage1" })}</th>
                         <th colSpan={3}>{t({id: "stagesGuide.stage2" })}</th>
                         <th colSpan={3}>{t({id: "stagesGuide.stage3" })}</th>
