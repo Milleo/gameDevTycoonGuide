@@ -41,7 +41,7 @@ function App() {
     if(localStorage.getItem("theme") !== undefined){
       setTheme(localStorage.getItem("theme"));
     }
-  }, []);
+  }, [languages]);
 
   const toggleDarkTheme = () => {
     const usedTheme = theme==="light"?"dark":"light";
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <IntlProvider defaultLocale='en' locale={lang} messages={messages}>
+      <IntlProvider defaultLocale={DEFAULT_LANGUAGE} locale={lang} messages={messages}>
         <GlobalStyles />
         <div className="App p-3">
           <Row className="d-flex mb-4">
