@@ -8,7 +8,7 @@ import StagesGuide from "./StagesGuide";
 
 const FilterFormMatches = (props) => {
     const { onChange } = props;
-    const [ formData, setFormData ] = useState({ topics: [], platforms: [], hasAudience: false, hasCasual: false });
+    const formData = { topics: [], platforms: [], hasAudience: false, hasCasual: false };
     const t = useIntl().formatMessage;
 
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
@@ -16,7 +16,6 @@ const FilterFormMatches = (props) => {
 
     const handleChange = (value, field) => {
         formData[field] = value;
-        setFormData(formData);
         onChange(formData);
     }
     
