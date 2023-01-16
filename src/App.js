@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Form, Row, Tab, Tabs } from 'react-bootstrap';
-import PlatformsSection from "./components/PlatformsSection";
-import TopicsSection from "./components/TopicsSection";
-import BestMatchesSection from "./components/BestMatchesSection";
+import { Col, Form, Row } from 'react-bootstrap';
+import MainSection from "./components/MainSection";
 import LanguageSelector from "./components/LanguageSelector";
 import { lightTheme, darkTheme } from "./theme";
 import { useEffect, useState } from 'react';
@@ -12,23 +10,37 @@ import { IntlProvider } from 'react-intl';
 import { enMessages, ptBrMessages } from "./i18n";
 
 function App() {
+  const languages = {
+    "en": enMessages,
+    "pt-br": ptBrMessages
+  }
+  const DEFAULT_LANGUAGE = "en";
   const [ theme, setTheme ] = useState("light");
-  const [ lang, setLang ] = useState("en");
+  const [ lang, setLang ] = useState(DEFAULT_LANGUAGE);
   const [ messages, setMessages ] = useState(enMessages);
   
+  
   useEffect(() => {
+    /** Setting application language */
     if(localStorage.getItem("lang") === undefined){
       const browserLanguage = (navigator.language || navigator.userLanguage).toLowerCase()
-      setLang(browserLanguage);
-      if(browserLanguage !== "pt-br"){
-        setMessages(enMessages);
+
+      if(Object.keys(languages).indexOf(browserLanguage) === -1){
+        setLang(DEFAULT_LANGUAGE);
+        setMessages(languages[DEFAULT_LANGUAGE])
       }else{
-        setMessages(ptBrMessages);
+        setLang(browserLanguage);
+        setMessages(languages[browserLanguage]);
       }
     }else{
       setLang(localStorage.getItem("lang"));
+      setMessages(languages[localStorage.getItem("lang")]);
     }
-    setTheme(localStorage.getItem("theme"));
+
+    /* Setting theme of application if saved in localStorage */
+    if(localStorage.getItem("theme") !== undefined){
+      setTheme(localStorage.getItem("theme"));
+    }
   }, []);
 
   const toggleDarkTheme = () => {
@@ -38,13 +50,10 @@ function App() {
   }
 
   const changeLang = (_, el) => {
-    setLang(el.target.dataset.country);
-    localStorage.setItem("lang", el.target.dataset.country);
-    if(el.target.dataset.country !== "pt-br"){
-      setMessages(enMessages);
-    }else{
-      setMessages(ptBrMessages);
-    }
+    const value = el.target.dataset.country;
+    setLang(value);
+    localStorage.setItem("lang", value);
+    setMessages(languages[value]);
   }
 
   return (
@@ -59,18 +68,7 @@ function App() {
               <LanguageSelector selectedLanguage={lang} onChangeLang={ changeLang } />
             </Col>
           </Row>
-          <Tabs defaultacitvekey="best">
-            <Tab eventKey="best" title="Find best matches">
-              <BestMatchesSection />
-            </Tab>
-            <Tab eventKey="topics" title="Topics">
-              <TopicsSection />
-            </Tab>
-            <Tab eventKey="platforms" title="Platforms">
-              <PlatformsSection />
-            </Tab>
-            
-          </Tabs>
+          <MainSection />
         </div>
       </IntlProvider>
     </ThemeProvider>

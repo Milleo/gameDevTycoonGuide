@@ -1,4 +1,7 @@
 const messages = {
+    "tabs.best": "Find best matches",
+    "tabs.topics": "Topics",
+    "tabs.platforms": "Platforms",
     "filter.title": "Filter",
     "filter.matches.platforms": "Available Platforms",
     "filter.matches.topics": "Available Topics",
