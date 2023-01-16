@@ -5,29 +5,15 @@ import topicsData from "../data/topics.json";
 
 const FilterFormTopics = (props) => {
     const { onChange } = props;
-    const [ topics, setTopics ] = useState([]);
-    const [ genres, setGenres ] = useState([]);
-    const [ audiences, setAudiences ] = useState([]);
+    const formData = { topics: [], platforms: [], audiences: [] };
 
     const topicsOptions = topicsData.map((topic) => { return { value: topic.name, label: topic.name } });
     const genresOptions = Object.keys(topicsData[0].genres).map((genre) => { return { value: genre, label: genre } });
     const audiencesOptions = Object.keys(topicsData[0].audience).map((aud) => { return { value: aud, label: aud } });
 
     const handleChange = (value, field) => {
-        switch(field){
-            case "topics":
-                setTopics(value);
-                break;
-            case "genres":
-                setGenres(value);
-                break;
-            case "audiences":
-                setAudiences(value);
-                break;
-            default:
-                break;
-        }
-        onChange(topics, genres, audiences);
+        formData[field] = value
+        onChange(formData);
     }
     
     return <Container>
