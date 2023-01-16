@@ -25,6 +25,7 @@ const PlatformsTable = (props) => {
             if(filteredGenres.indexOf(col.value) > -1){
                 return col;
             }
+            return null;
         });
     }
 
@@ -34,6 +35,7 @@ const PlatformsTable = (props) => {
             if(filteredAudiences.indexOf(col.value) > -1){
                 return col;
             }
+            return null;
         });
     }
     
