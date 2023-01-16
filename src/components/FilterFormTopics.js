@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
 import Select from 'react-select';
 import topicsData from "../data/topics.json";

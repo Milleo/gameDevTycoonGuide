@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { useIntl } from "react-intl";
 import Select from 'react-select';

@@ -3,17 +3,19 @@ import { Col, Form, Row } from 'react-bootstrap';
 import MainSection from "./components/MainSection";
 import LanguageSelector from "./components/LanguageSelector";
 import { lightTheme, darkTheme } from "./theme";
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { GlobalStyles } from './global';
 import { ThemeProvider } from 'styled-components';
 import { IntlProvider } from 'react-intl';
 import { enMessages, ptBrMessages } from "./i18n";
 
 function App() {
-  const languages = {
-    "en": enMessages,
-    "pt-br": ptBrMessages
-  }
+  const languages = useMemo(() => {
+    return {
+      "en": enMessages,
+      "pt-br": ptBrMessages
+    }
+  }, []);
   const DEFAULT_LANGUAGE = "en";
   const [ theme, setTheme ] = useState("light");
   const [ lang, setLang ] = useState(DEFAULT_LANGUAGE);
