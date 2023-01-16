@@ -45,4 +45,18 @@ export const GlobalStyles = createGlobalStyle`
   .tab-content{
     padding-top: 20px;
   }
+  footer{
+    background: #003366;
+    text-align: center;
+    font-size:0.7rem;
+    padding: 10px 0;
+  }
+  footer p{
+    margin: 0;
+  }
+  footer a,
+  footer a:hover{
+    color: #FFFFFF;
+    font-weight:bold;
+  }
   `

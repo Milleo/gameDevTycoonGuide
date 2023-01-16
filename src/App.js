@@ -72,6 +72,11 @@ function App() {
           </Row>
           <MainSection />
         </div>
+        <footer>
+            <p>Game Dev Tycoon Guide - 2023 - Version 0.2<br />
+            Created by <a href="//github.com/milleo" rel="noreferrer" target="_blank">Rafael Milléo</a><br />
+            Colaborate with this project on <a href="//github.com/Milleo/gameDevTycoonGuide" rel="noreferrer" target="_blank">Github</a></p>
+        </footer>
       </IntlProvider>
     </ThemeProvider>
   );
